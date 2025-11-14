@@ -6,7 +6,7 @@
 /*   By: mbouyer <mbouyer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 15:33:45 by mbouyer           #+#    #+#             */
-/*   Updated: 2025/11/07 12:10:33 by mbouyer          ###   ########.fr       */
+/*   Updated: 2025/11/13 17:34:11 by mbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,16 @@ char	*ft_strdup(const char *s)
 	size_t		i;
 	char		*dup_s;
 
-	dup_s = malloc(sizeof(ft_strlen(s)));
-	i = 0;
+	dup_s = (char *) malloc(ft_strlen(s) + 1);
 	if (!dup_s)
 		return (NULL);
-	while (s[i] != '\0')
+	i = 0;
+	while (s[i])
 	{
 		dup_s[i] = s[i];
 		i++;
 	}
-	dup_s[i] = '\0';
+	dup_s[i] = 0;
 	return (dup_s);
 }
 /*

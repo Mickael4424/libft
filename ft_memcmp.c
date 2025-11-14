@@ -6,7 +6,7 @@
 /*   By: mbouyer <mbouyer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 09:42:31 by mbouyer           #+#    #+#             */
-/*   Updated: 2025/11/07 11:17:53 by mbouyer          ###   ########.fr       */
+/*   Updated: 2025/11/13 19:01:28 by mbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	ptr_s2 = 0;
 	ptr_s1 = (unsigned char *) s1;
 	ptr_s2 = (unsigned char *) s2;
-	while (i < n && ptr_s1[i] != '\0' && ptr_s2[i] != '\0')
+	while (i < n)
 	{
 		if (ptr_s1[i] != ptr_s2[i])
 		{
@@ -36,10 +36,10 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 /*
 int main (void)
 {
-    char a[] = "halo";
-    char b[] = "hflo";
-    printf("%d\n", ft_memcmp(a, b, 2));
-    printf("%d\n", memcmp(a, b, 2));
+    char a[] = "abcde";
+    char b[] = "";
+    printf("%d\n", ft_memcmp(a, b, 5));
+    printf("%d\n", memcmp(a, b, 5));
     return (0);
 }
 */

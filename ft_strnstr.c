@@ -6,7 +6,7 @@
 /*   By: mbouyer <mbouyer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 10:39:12 by mbouyer           #+#    #+#             */
-/*   Updated: 2025/11/10 10:58:39 by mbouyer          ###   ########.fr       */
+/*   Updated: 2025/11/13 17:49:33 by mbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,16 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	i = 0;
 	j = 0;
 	if (little[i] == '\0')
-		return ((char *) big);
-	while (i < len && big[i] != '\0')
+		return ((char *)big);
+	while (i < len && big[i])
 	{
-		if (big[i] == little[j])
+		while (big[i + j] == little[j] && big[i + j]
+			&& (i + j) < len)
 		{
-			while (big[i + j] == little[j])
-			{
-				j++;
-			}
+			j++;
 			if (little[j] == '\0')
-			{
-				return ((char *) big + i);
-			}
+				return ((char *)big + i);
 		}
-		j = 0;
 		i++;
 	}
 	return (0);
@@ -42,10 +37,9 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 /*
 int main(void)
 {
-    char *b = "Bab bar biot";
-    char *s = "bara";
-    printf("%s\n", (char *)ft_strnstr(b, s, 10));
-    printf("%s\n", (char *)strnstr(b, s, 10));
-    return (0);
+	char *b = "Trouverez vous Charly dans cette phrase?";
+	char *s = "Charly";
+	printf("%s\n", (char *)ft_strnstr(b, s, 18));
+	return (0);
 }
 */

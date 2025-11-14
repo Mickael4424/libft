@@ -6,7 +6,7 @@
 /*   By: mbouyer <mbouyer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 14:39:16 by mbouyer           #+#    #+#             */
-/*   Updated: 2025/11/06 12:35:40 by mbouyer          ###   ########.fr       */
+/*   Updated: 2025/11/13 16:15:39 by mbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 void	*ft_calloc(size_t	nmemb, size_t	size)
 {
-	unsigned char	*ptr;
-	size_t			i;
+	void	*ptr;
+	size_t	total_size;
 
-	i = 0;
-	ptr = malloc(size * nmemb);
+	total_size = nmemb * size;
+	if (nmemb != 0 && ((total_size / nmemb) != size))
+		return (NULL);
+	ptr = malloc (total_size);
 	if (!ptr)
 		return (NULL);
-	while (i < size * nmemb)
-	{
-		ptr[i] = '\0';
-		i++;
-	}
+	ft_bzero(ptr, total_size);
 	return (ptr);
 }
 /*

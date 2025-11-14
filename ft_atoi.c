@@ -6,7 +6,7 @@
 /*   By: mbouyer <mbouyer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 10:44:37 by mbouyer           #+#    #+#             */
-/*   Updated: 2025/11/10 15:00:59 by mbouyer          ###   ########.fr       */
+/*   Updated: 2025/11/12 10:43:39 by mbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	i = 0;
 	sign = 1;
 	res = 0;
-	while (str[i] == 32 && (str[i] >= 9 && str[i] <= 13))
+	while (str[i] == 32 || (str[i] >= 9 && str[i] <= 13))
 	{
 		i++;
 	}
@@ -43,7 +43,7 @@ int	ft_atoi(const char *str)
 /*
 int main(void)
 {
-	char a[] = "+-1256";
+	char a[] = "\f\t\n\r\v   		 		 -42";
 	printf("%d\n", ft_atoi(a));
 	printf("%d\n", atoi(a));
 	return (0);

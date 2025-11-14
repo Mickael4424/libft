@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbouyer <mbouyer@student.42nice.fr>        +#+  +:+       +#+        */
+/*   By: mickael <mickael@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/03 15:05:53 by mbouyer           #+#    #+#             */
-/*   Updated: 2025/11/13 15:28:31 by mbouyer          ###   ########.fr       */
+/*   Created: 2025/11/11 09:31:33 by mickael           #+#    #+#             */
+/*   Updated: 2025/11/11 10:54:07 by mickael          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+t_list *ft_lstnew(void *content)
 {
-	size_t	i;
+    t_list *str
 
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-	{
-		i++;
-	}
-	return (i);
+    str = malloc(sizeof(t_list));
+    if (!str)
+        return (NULL);
+    str->content = content;
+    str->next = NULL;
+    return (str)
 }
-/*
+
 int main(void)
 {
-    char text[] = "";
-    printf("%zu", ft_strlen(text));
-    printf("\n");
-    printf("%lu", strlen(text));
+    void *a = "abcdef";
+    printf("a %s", a);
+    printf("t_list%s\n", t_list *ft_lstnew (void *content));
     return (0);
 }
-*/

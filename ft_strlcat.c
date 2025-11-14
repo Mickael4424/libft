@@ -6,7 +6,7 @@
 /*   By: mbouyer <mbouyer@student.42nice.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:10:42 by mbouyer           #+#    #+#             */
-/*   Updated: 2025/11/10 10:58:52 by mbouyer          ###   ########.fr       */
+/*   Updated: 2025/11/13 17:39:07 by mbouyer          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	if (dst_len >= size)
-	{
-		return (dst_len + src_len);
-	}
+		dst_len = size;
+	if (dst_len == size)
+		return (size + src_len);
 	if (src_len < (size - dst_len))
 	{
 		ft_memcpy(dst + dst_len, src, src_len + 1);
